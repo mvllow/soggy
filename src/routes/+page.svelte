@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Lotus, LotusInput } from '$lib';
+	import { Lotus, LotusInput, LotusGroup, LotusItem } from '$lib';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -10,30 +10,41 @@
 <Lotus list={data.itemList} let:matches>
 	<LotusInput placeholder="Search..." />
 
-	<ul>
+	<LotusGroup>
 		{#each matches as match}
-			<li>{match.name}</li>
+			<LotusItem>{match.name}</LotusItem>
 		{/each}
-	</ul>
+	</LotusGroup>
 </Lotus>
 
 <h2>Groups</h2>
 
-<Lotus list={data.groupList} let:matches>
+<Lotus list={data.groupList} let:matches let:query>
 	<LotusInput placeholder="Search..." />
 
-	<ul>
-		{#each matches as match}
-			<li>{match.name}</li>
+	{#each matches as match}
+		<LotusGroup>
+			<svelte:fragment slot="heading">{match.name}</svelte:fragment>
 
 			<!-- Provide accurate typings -->
 			{#if Array.isArray(match.items)}
-				<ul>
-					{#each match.items as item}
-						<li>{item.name}</li>
-					{/each}
-				</ul>
+				{#each match.items as item}
+					<LotusItem>
+						<a href="#{item.name}">{item.name}</a>
+					</LotusItem>
+				{/each}
 			{/if}
-		{/each}
-	</ul>
+		</LotusGroup>
+	{/each}
+
+	{#if !matches.length}
+		<p>No results for "{query}"</p>
+	{/if}
 </Lotus>
+
+<style global>
+	[aria-selected='true'] {
+		color: white;
+		background: palevioletred;
+	}
+</style>

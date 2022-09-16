@@ -19,4 +19,5 @@ export interface Item {
 }
 
 export type QueryContext = Writable<string>;
+export type SelectedContext = Writable<Element | null>;
 export type LabelsContext = { input: string; suggestions: string };
