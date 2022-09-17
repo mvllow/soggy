@@ -1,5 +1,6 @@
 {
 	"name": "soggy",
+	"description": "Filter floods of results into a soggy delight",
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
