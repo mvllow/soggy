@@ -1,5 +1,5 @@
 import hasMatch from 'has-match';
-import type { List, Group, Item } from './types';
+import type { List, Group, Item } from './types.js';
 
 function isGroups(list: List): list is Group[] {
 	return (list as Group[])[0].items !== undefined;

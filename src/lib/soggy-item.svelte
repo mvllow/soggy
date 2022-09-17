@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getContext, onMount } from 'svelte';
-	import type { SelectedContext } from './types';
+	import type { SelectedContext } from './types.js';
 
 	let item: Element;
 	const selected = getContext<SelectedContext>('selected');

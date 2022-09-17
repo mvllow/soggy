@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
-	import type { QueryContext, LabelsContext } from './types';
+	import type { QueryContext, LabelsContext } from './types.js';
 
 	export let placeholder: string;
 
