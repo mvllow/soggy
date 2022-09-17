@@ -1,7 +1,14 @@
 {
 	"name": "soggy",
+	"license": "MIT",
 	"description": "Filter floods of results into a soggy delight",
-	"version": "0.0.1",
+	"version": "0.1.0",
+	"repository": "mvllow/package",
+	"funding": "https://github.com/sponsors/mvllow",
+	"author": {
+		"name": "mvllow",
+		"email": "mvllow@icloud.com"
+	},
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
@@ -9,6 +16,15 @@
 		"test": "playwright test",
 		"format": "prettier --write ."
 	},
+	"files": [
+		"package"
+	],
+	"keywords": [
+		"svelte",
+		"search",
+		"filter",
+		"match"
+	],
 	"dependencies": {
 		"has-match": "^1.0.3"
 	},
