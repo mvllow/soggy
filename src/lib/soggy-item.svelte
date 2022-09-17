@@ -18,7 +18,7 @@
 	bind:this={item}
 	on:focus={() => ($selected = item)}
 	on:mouseover={() => ($selected = item)}
-	data-lotus-item
+	data-soggy-item
 	aria-selected={item === $selected}
 	role="option"
 	{...$$restProps}

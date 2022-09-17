@@ -8,9 +8,9 @@
 	let labels = getContext<LabelsContext>('labels');
 </script>
 
-<label data-lotus-label for={labels.input}>{placeholder}</label>
+<label data-soggy-label for={labels.input}>{placeholder}</label>
 <input
-	data-lotus-input
+	data-soggy-input
 	id={labels.input}
 	bind:value={$query}
 	{placeholder}

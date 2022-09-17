@@ -21,11 +21,11 @@
 	$: scrollSelectedIntoView($selected);
 	$: $query.length > 0 && selectFirstItem();
 
-	// Provide unique labels per lotus instance
+	// Provide unique labels per soggy instance
 	id.update((previous) => previous + 1);
 	setContext<LabelsContext>('labels', {
-		input: `lotus-input-${$id}`,
-		suggestions: `lotus-suggestions-${$id}`,
+		input: `soggy-input-${$id}`,
+		suggestions: `soggy-suggestions-${$id}`,
 	});
 
 	function getSelectedItem(parentElement: Element = rootElement) {
@@ -86,7 +86,7 @@
 		}
 	}
 
-	// TODO: Multiple instances of lotus breaks keyboard navigation
+	// TODO: Multiple instances of soggy breaks keyboard navigation
 	function handleKeydown(e: KeyboardEvent) {
 		if (!e.defaultPrevented) {
 			switch (e.key) {
@@ -140,6 +140,6 @@
 
 <svelte:window on:keydown={handleKeydown} />
 
-<div bind:this={rootElement} data-lotus-root {...$$restProps}>
+<div bind:this={rootElement} data-soggy-root {...$$restProps}>
 	<slot {matches} query={$query} selected={$selected} />
 </div>
