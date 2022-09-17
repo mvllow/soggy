@@ -116,9 +116,21 @@
 					updateSelectedByChange(-1);
 					break;
 				}
+				// Manually handle enter to avoid removing focus from the
+				// search input when selecting an item.
 				case 'Enter': {
 					e.preventDefault();
-					// TODO
+
+					const childElement = $selected?.firstElementChild;
+					const tagName = childElement?.tagName;
+
+					if (!tagName) break;
+					if (tagName === 'A' || tagName === 'BUTTON') {
+						(childElement as HTMLAnchorElement | HTMLButtonElement).click();
+					}
+
+					$query = '';
+
 					break;
 				}
 			}
