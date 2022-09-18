@@ -3,7 +3,11 @@
 	import { writable } from 'svelte/store';
 	import { id } from './store.js';
 	import { filter } from './utils.js';
-	import { GROUP_SELECTOR, HEADING_SELECTOR, ITEM_SELECTOR } from './constants.js';
+	import {
+		GROUP_SELECTOR,
+		HEADING_SELECTOR,
+		ITEM_SELECTOR,
+	} from './constants.js';
 	import type {
 		List,
 		LabelsContext,
