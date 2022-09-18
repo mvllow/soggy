@@ -2,7 +2,7 @@
 	"name": "soggy",
 	"license": "MIT",
 	"description": "Filter floods of results into a soggy delight",
-	"version": "0.1.5",
+	"version": "0.1.6",
 	"repository": "mvllow/soggy",
 	"funding": "https://github.com/sponsors/mvllow",
 	"author": {
