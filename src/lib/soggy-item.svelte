@@ -1,13 +1,18 @@
 <script lang="ts">
-	import { getContext, onMount } from 'svelte';
+	import { getContext, onMount,onDestroy } from 'svelte';
 	import type { SelectedContext } from './types.js';
 
 	let item: Element;
 	const selected = getContext<SelectedContext>('selected');
 
+	const listener =  () => ($selected = item)
+
 	onMount(() => {
-		// TODO: Cleanup onDestroy?
-		item.addEventListener('focusin', () => ($selected = item));
+		item.addEventListener('focusin',listener);
+	});
+
+	onDestroy(() => {
+		item && item.removeEventListener('focusin',listener);
 	});
 
 	// @ts-ignore it should be okay to attempt to blur non focusable elements

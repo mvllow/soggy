@@ -85,10 +85,9 @@
 				.closest(GROUP_SELECTOR)
 				?.querySelector(HEADING_SELECTOR)
 				?.scrollIntoView({ block: 'nearest' });
-
-			// Ensure item is always in view
-			item.scrollIntoView({ block: 'nearest' });
 		}
+
+		item?.scrollIntoView({ block: 'nearest' });
 	}
 
 	// TODO: Multiple instances of soggy breaks keyboard navigation
