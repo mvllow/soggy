@@ -2,7 +2,7 @@
 	"name": "soggy",
 	"license": "MIT",
 	"description": "Filter floods of results into a soggy delight",
-	"version": "0.1.6",
+	"version": "0.0.0",
 	"repository": "mvllow/soggy",
 	"funding": "https://github.com/sponsors/mvllow",
 	"author": {
@@ -16,9 +16,6 @@
 		"test": "playwright test",
 		"format": "prettier --plugin-search-dir . --write ."
 	},
-	"files": [
-		"package"
-	],
 	"keywords": [
 		"svelte",
 		"search",
