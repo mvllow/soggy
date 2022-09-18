@@ -16,12 +16,13 @@
 	} from './types.js';
 
 	export let list: List;
+	export let keys: string[];
 
 	let rootElement: Element;
 	let query = setContext<QueryContext>('query', writable(''));
 	let selected = setContext<SelectedContext>('selected', writable(null));
 
-	$: matches = filter(list, $query);
+	$: matches = filter(list, $query, keys);
 	$: scrollSelectedIntoView($selected);
 	$: $query.length > 0 && selectFirstItem();
 

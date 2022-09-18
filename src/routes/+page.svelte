@@ -5,7 +5,7 @@
 	export let data: PageData;
 </script>
 
-<Soggy list={data.list} let:matches let:query>
+<Soggy list={data.list} keys={['name', 'species']} let:matches let:query>
 	<SoggyInput placeholder="Search..." />
 
 	{#each matches as match}
