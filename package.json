@@ -10,6 +10,9 @@
 		"email": "mvllow@icloud.com"
 	},
 	"type": "module",
+	"exports": {
+		".": "./index.js"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "svelte-kit sync && svelte-package",
@@ -20,6 +23,7 @@
 	"files": [
 		"package"
 	],
+	"types": "package",
 	"keywords": [
 		"svelte",
 		"search",
